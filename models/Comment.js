@@ -12,19 +12,23 @@ Comment.init(
             autoIncrement: true
         },
         comment: {
-            type: DataTypes.TEXT 
+            type: DataTypes.TEXT,
+            allowNull: false
         },
         post_id: {
             type: DataTypes.INTEGER,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false
         }
     },
     {
-      sequelize,
-      freezeTableName: true,
-      modelName: 'comment'
+       sequelize,
+       freezeTableName: true,
+       underscored: true,
+       modelName: 'comment'
     }
 );
 
