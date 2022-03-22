@@ -13,6 +13,7 @@ Comment.init(
         },
         comment: {
 <<<<<<< HEAD
+<<<<<<< HEAD
             type: DataTypes.TEXT 
         },
         post_id: {
@@ -40,10 +41,28 @@ Comment.init(
         }
     },
     {
+=======
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        post_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
+    },
+    {
+>>>>>>> parent of 59560d9 (joins completed)
        sequelize,
        freezeTableName: true,
        underscored: true,
        modelName: 'comment'
+<<<<<<< HEAD
+>>>>>>> parent of 59560d9 (joins completed)
+=======
 >>>>>>> parent of 59560d9 (joins completed)
     }
 );
