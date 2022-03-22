@@ -3,26 +3,7 @@ const { User, Post, Comment } = require('../../models');
 
 // GET /api/posts
 router.get('/', (req, res) => {
-    Post.findAll({
-        attributes:[
-            'id',
-            'title',
-            'contents'
-        ],
-        include: [{
-            model: User,
-            attributes:['id','username']
-        },
-        {
-            model: Comment,
-            attributes:['id', 'comment'],
-            include: [{
-                model: User,
-                attributes: ['id', 'username']
-            }]
-        }
-    ]
-    })
+    Post.findAll()
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
