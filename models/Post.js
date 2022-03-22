@@ -27,22 +27,7 @@ Post.init(
     {
         sequelize,
         freezeTableName: true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        modelName: 'post',
-=======
-        underscored: true,
         modelName: 'post'
->>>>>>> parent of 59560d9 (joins completed)
-=======
-        underscored: true,
-        modelName: 'post'
->>>>>>> parent of 59560d9 (joins completed)
-=======
-        underscored: true,
-        modelName: 'post'
->>>>>>> parent of 59560d9 (joins completed)
     }
 );
 
