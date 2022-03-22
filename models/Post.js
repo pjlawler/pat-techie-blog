@@ -13,21 +13,26 @@ Post.init(
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         contents: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         }
     },
     {
         sequelize,
         freezeTableName: true,
+<<<<<<< HEAD
         modelName: 'post',
+=======
+        underscored: true,
+        modelName: 'post'
+>>>>>>> parent of 59560d9 (joins completed)
     }
 );
 
