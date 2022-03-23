@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
-        where: { id: req.params.id }
+        where: { id: req.params.id },
     })
     .then(dbUserData =>  {
         if(!dbUserData) {
@@ -43,6 +43,7 @@ router.post('/', (req, res) => {
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
     User.update(req.body, {
+        individualHooks: true,
         where: { id: req.params.id }
     })
     .then(dbUserData => {
