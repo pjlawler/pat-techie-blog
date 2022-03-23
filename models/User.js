@@ -36,10 +36,9 @@ User.init(
     {
         sequelize,
         freezeTableName: true,
+        underscored: true,
         modelName: 'user'
     }
 );
 
 module.exports = User;
-
-//updating
