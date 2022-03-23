@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         },
         {
             model: Comment,
-            attributes:['id', 'comment'],
+            attributes:['id', 'comment', 'created_at', 'updated_at'],
             include: [{
                 model: User,
                 attributes: ['id', 'username']
@@ -98,5 +98,3 @@ router.delete('/:id', (req, res) => {
 
 
 module.exports = router;
-
-//updating
