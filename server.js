@@ -3,17 +3,24 @@ const controllers = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
 const exphbs = require('express-handlebars');
-
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const hbs = exphbs.create({});
-
 const app = express();
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
 const PORT = process.env.PORT || 3001;
 
-// Express middleware
+const sess = {
+  secret: 'techie blogs are cool',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({ db: sequelize })
+};
+
+
+app.use(session(sess));
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -25,5 +32,4 @@ sequelize.sync({ force: false }).then(() => {
   });
 
 
-  // Create login route next (14.2.5)
-  // add session and make page functionality
+  // Create single page (14.3.3)
