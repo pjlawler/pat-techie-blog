@@ -26,3 +26,4 @@ sequelize.sync({ force: false }).then(() => {
 
 
   // Create login route next (14.2.5)
+  // add session and make page functionality
