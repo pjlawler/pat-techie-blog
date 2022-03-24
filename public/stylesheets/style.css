@@ -3,4 +3,106 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    border: 1px black solid;
+    align-items: flex-end;
+    padding: 20px;
+    color: black;
+}
+
+header h1 a {
+    color: black;
+}
+
+.menu-bar {
+    width: 25%;
+    margin-left: 50px;
+}
+
+.menu-bar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.post {
+    width: 90%;
+    margin: 0 auto;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.titleline, .footerline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.post-title {
+    font-size: 22px;
+    color: blue;
+    font-weight: bold;
+}
+
+.post-author {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contents {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.post-date, .post-comments {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.login-form {
+    width: 400px;
+    border: 1px solid black;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.login-form h1 {
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.login-form label {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.login-form input {
+    height: 30px;
+    width: 380px;
+    margin-bottom: 25px;
+}
+
+.login-form button {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#formUser {
+    display: flex;
+}
+
+#formNewUser {
+    display: none;
+}
+
+.other-options {
+    margin-top: 10px;
+    text-align: center;
 }

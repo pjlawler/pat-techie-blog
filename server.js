@@ -6,7 +6,6 @@ const exphbs = require('express-handlebars');
 
 const hbs = exphbs.create({});
 
-
 const app = express();
 
 app.engine('handlebars', hbs.engine);
@@ -26,4 +25,4 @@ sequelize.sync({ force: false }).then(() => {
   });
 
 
-  // Create login route next (13.2.6)
+  // Create login route next (14.2.5)
