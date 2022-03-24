@@ -13,14 +13,14 @@ router.get('/', (req, res) => {
         ],
         include: [{
             model: User,
-            attributes:['id','username']
+            attributes:['id','user_name']
         },
         {
             model: Comment,
             attributes:['id', 'comment', 'created_at', 'updated_at'],
             include: [{
                 model: User,
-                attributes: ['id', 'username']
+                attributes: ['id', 'user_name']
             }]
         }
     ]
@@ -34,7 +34,27 @@ router.get('/', (req, res) => {
 // GET /api/posts/1
 router.get('/:id', (req, res) => {
     Post.findOne( {
-        where: { id: req.params.id}
+        where: { id: req.params.id},
+        attributes:[
+            'id',
+            'title',
+            'contents',
+            'created_at',
+            'updated_at'
+        ],
+        include: [{
+            model: User,
+            attributes:['id','user_name']
+        },
+        {
+            model: Comment,
+            attributes:['id', 'comment', 'created_at', 'updated_at'],
+            include: [{
+                model: User,
+                attributes: ['id', 'user_name']
+            }]
+        }
+    ]
     })
     .then(dbPostData => {
         if(!dbPostData) {
