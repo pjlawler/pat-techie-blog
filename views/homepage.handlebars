@@ -3,12 +3,10 @@
     <li>
         <div class="post">
         <div class="titleline">
-            <span class="post-title">{{post.title}}</span>
+            <a href='/post/{{post.id}}'><span class="post-title">{{post.title}}</span></a>
             <span class="post-author">Author: {{post.user.user_name}}</span>
         </div>
 
-        <div class="contents">{{post.contents}}</div>
-        
         <div class="footerline">
             <span class="post-date">Posted: {{post.created_at}}</span>
             <span class="post-comments">Comments: {{post.comments.length}}</span>

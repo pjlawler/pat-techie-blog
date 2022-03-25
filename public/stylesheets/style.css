@@ -7,12 +7,20 @@
 }
 
 header {
-    display: flex;
     border: 1px black solid;
-    align-items: flex-end;
     padding: 20px;
     color: black;
 }
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.title-wrapper h1 {
+    margin-left: 20px;
+}
+
 
 header h1 a {
     color: black;
@@ -43,7 +51,7 @@ header h1 a {
 }
 
 .post-title {
-    font-size: 22px;
+    font-size: 24px;
     color: blue;
     font-weight: bold;
 }
@@ -105,4 +113,22 @@ header h1 a {
 .other-options {
     margin-top: 10px;
     text-align: center;
+}
+
+.single-post-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.comment-line {
+    display: flex;
+}
+
+.comment-text {
+    margin-left: 10px;
+}
+
+.comment-date {
+    margin-left: 26px;
 }
