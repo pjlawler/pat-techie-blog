@@ -1,9 +1,60 @@
-function format_date(date) {
-    return '12-31-1999'
-}
 
-function hasComments(comments) {
-    return comments.length > 0;
-}
+function timeSince(date) {
+    now = new Date();
+    const minute = 60000
+    const hour = minute * 60
+    const day = hour * 24
+    const week = day * 7
+    const year = week * 52
 
-module.exports = { format_date, hasComments}
+    const timeDelta = now - date;
+
+    switch (true) {
+        case timeDelta < minute:
+            return "less than a minute ago";
+        case timeDelta < hour:
+            const minutesSince = Math.floor(timeDelta/minute);
+            if(minutesSince === 1) {
+                return "1 minute ago";
+            }
+            return `${minutesSince} minutes ago`;
+        case timeDelta < day:
+            const hoursSince = Math.floor(timeDelta/hour);
+            if(hoursSince === 1) {
+                return "1 hour ago";
+            }
+            return `${hoursSince} hours ago`;
+        case timeDelta < week:
+            const daysSince = Math.floor(timeDelta/day);
+            if(daysSince === 1) {
+                return "yesterday";
+            }
+            return `${daysSince} days ago`
+        case timeDelta < year:
+            const weeksSince = Math.floor(timeDelta/week);
+            if(weeksSince === 1) {
+                return "1 week ago";
+            }
+            return `${weeksSince} weeks ago`
+        default:
+            const yearsSince = Math.floor(timeDelta/year);
+            if(yearsSince ===1) {
+                return "1 year ago";
+            }
+            return `${yearsSince} years ago`
+    }   
+};
+
+function commentCount(comments) {
+    
+    switch(true) {
+        case comments.length === 0:
+            return 'No comments yet';
+        case comments.length === 1:
+            return '1 comment';
+        default:
+            return `${comments.length} comments`
+    }
+};
+
+module.exports = {timeSince, commentCount }

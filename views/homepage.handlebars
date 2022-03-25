@@ -2,15 +2,9 @@
     {{#each posts as |post|}}
     <li>
         <div class="post">
-        <div class="titleline">
-            <a href='/post/{{post.id}}'><span class="post-title">{{post.title}}</span></a>
-            <span class="post-author">Author: {{post.user.user_name}}</span>
-        </div>
-
-        <div class="footerline">
-            <span class="post-date">Posted: {{post.created_at}}</span>
-            <span class="post-comments">Comments: {{post.comments.length}}</span>
-        </div>
+            <a href='/post/{{post.id}}'><p class="post-title">{{post.title}}</p></a>
+            <p class="post-date">Published by: <span class="post-user">{{post.user.user_name}}</span> - ({{timeSince post.created_at}})</p>
+            <p class="post-comments">{{commentCount post.comments}}</p>
         </div>
     </li>
     {{/each}}
