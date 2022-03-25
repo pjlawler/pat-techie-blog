@@ -1,0 +1,23 @@
+
+    <div class="single-post-wrapper">
+        <p class="post-title">{{post.title}}</p>
+        <br>
+        <p class="post-author">Author: {{post.user.user_name}}</p>
+        <p class="post-date">Posted: {{post.created_at}}</p>
+        <br>
+        <div class="contents">{{post.contents}}</div>
+        <br>
+        {{#if post.comments }}
+        <h2>Comments</h2>
+        {{else}}
+        <h2>No Comments</h2>
+        {{/if}}
+        {{#each post.comments as |post-comment| }}
+            <div class="comment-line">
+                <img src="/assets/favicon-16x16.png">
+                <p class="comment-text">{{comment}} - {{user.user_name}}</p>
+            </div>
+            <p class="comment-date">{{created_at}}</p>
+            <br>
+        {{/each}}
+    </div>
