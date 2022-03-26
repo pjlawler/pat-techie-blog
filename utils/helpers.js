@@ -27,7 +27,7 @@ function timeSince(date) {
         case timeDelta < week:
             const daysSince = Math.floor(timeDelta/day);
             if(daysSince === 1) {
-                return "yesterday";
+                return "1 day ago";
             }
             return `${daysSince} days ago`
         case timeDelta < year:
@@ -57,4 +57,11 @@ function commentCount(comments) {
     }
 };
 
-module.exports = {timeSince, commentCount }
+function format_date(date) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${month}/${day}`
+}
+
+module.exports = {timeSince, commentCount, format_date }

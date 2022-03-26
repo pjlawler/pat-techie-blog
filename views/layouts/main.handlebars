@@ -25,11 +25,11 @@
           <li><a href="/">Home</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
           {{#if req.session.loggedIn}}
+          <li class="user-signedin">Logged in as: {{req.session.user_name}}</li>
           <li><a href="#" id="logout">Logout</a></li>
-          <li class="user-signedin">User: {{req.session.user_name}}</li>
           {{else}}
+          <li class="user-signedin">Not logged in</li>
           <li><a href="/login" id="login">Login</a></li>
-          <li class="user-signedin">User: Not logged in</li>
           {{/if}}
         </ul>
       </nav>
@@ -40,7 +40,9 @@
     <footer>
     </footer>
   </div>
+  {{#if req.session.loggedIn}}
   <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
