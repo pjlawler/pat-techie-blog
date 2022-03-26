@@ -17,24 +17,32 @@ header {
     align-items: center;
 }
 
-.title-wrapper h1 {
+header h1 {
+    text-decoration: none;
+    color: black;
     margin-left: 20px;
 }
 
 
-header h1 a {
-    color: black;
-}
-
 .menu-bar {
-    width: 25%;
     margin-left: 50px;
 }
 
 .menu-bar ul {
     display: flex;
     list-style: none;
-    justify-content: space-between;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.menu-bar li {
+    margin-right: 25px;
+    font-size: 16px;
+}
+
+.user-signedin {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .post {
@@ -44,17 +52,13 @@ header h1 a {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.titleline, .footerline {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
 .post-title {
     font-size: 24px;
     color: blue;
     font-weight: bold;
 }
+
+
 
 .post-author {
     font-size: 16px;
@@ -63,7 +67,8 @@ header h1 a {
 
 .contents {
     padding: 10px;
-    border: 1px solid black;
+    font-size: 20px;
+    background-color: whitesmoke;
 }
 
 .post-date, .post-comments {
@@ -109,26 +114,47 @@ header h1 a {
 #formNewUser {
     display: none;
 }
-
 .other-options {
     margin-top: 10px;
     text-align: center;
 }
-
 .single-post-wrapper {
     width: 90%;
     margin: 0 auto;
     margin-top: 25px;
 }
-
 .comment-line {
     display: flex;
+    margin-top: 10px;
 }
-
 .comment-text {
     margin-left: 10px;
+    font-size: 18px;
 }
-
 .comment-date {
     margin-left: 26px;
+}
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+#new-comment {
+    max-width:100%;
+    margin-bottom: 10px;
+}
+.comment-form button {
+    width: 100px;
+    height: 50px;
+}
+.comments-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: blue;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
 }

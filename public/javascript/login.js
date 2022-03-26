@@ -46,10 +46,10 @@ async function newuserLoginForm(event) {
                 password
             }),
             headers: {'Content-Type': 'application/json'}
-        })
+        });
         
         if(response.ok){ 
-            console.log('success');
+            document.location.replace('/dashboard');
         }
         else {
             alert(response.statusText);
@@ -72,7 +72,7 @@ async function userLoginForm(event) {
         })
 
         if(response.ok){
-            console.log('success')
+            document.location.replace('/dashboard');
         } 
         else {
             alert(response.statusText);

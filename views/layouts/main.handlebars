@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  
   <div class="wrapper">
     <header>
       <a href="/">
@@ -22,9 +23,14 @@
       <nav class="menu-bar">
         <ul>
           <li><a href="/">Home</a></li>
-            <li><a href="#" id="logout">Logout</a></li>
-            <li><a href="/login">Login</a></li>
-          <li>Dashboard</li>
+          <li><a href="/dashboard">Dashboard</a></li>
+          {{#if req.session.loggedIn}}
+          <li><a href="#" id="logout">Logout</a></li>
+          <li class="user-signedin">User: {{req.session.user_name}}</li>
+          {{else}}
+          <li><a href="/login" id="login">Login</a></li>
+          <li class="user-signedin">User: Not logged in</li>
+          {{/if}}
         </ul>
       </nav>
     </header>
