@@ -51,7 +51,7 @@ router.get('/new-post', withAuth, (req, res) => {
   res.render('new-post');
 })
 
-router.get('/post/:id', withAuth, (req, res) => {
+router.get('/post/:id', (req, res) => {
   Post.findAll({
     where: { id: req.params.id },
     attributes:[
