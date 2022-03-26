@@ -1,14 +1,21 @@
 
+    
+
     <div class="single-post-wrapper">
+
         <p class="post-title">{{post.title}}</p>
         <div class="contents">{{post.contents}}</div>
         <p class="post-date">Published by: <span class="bold">{{post.user.user_name}}</span> - ({{timeSince post.created_at}})</p>
         <br>
+
+        {{#if req.session.loggedIn}}
          <form class="comment-form">
              <label for="new-comment">Leave a comment</label>
              <textarea name="new-comment" id="new-comment" cols="100" rows="4"></textarea>
              <button id="comment-button" class="button">Leave Comment</button>
          </form>
+         {{/if}}
+
         <p class="comments-header">{{commentCount post.comments}}</p>
         {{#each post.comments as |post-comment| }}
             <div class="comment-line">

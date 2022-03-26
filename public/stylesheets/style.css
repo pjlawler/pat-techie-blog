@@ -25,14 +25,24 @@ header h1 {
 
 
 .menu-bar {
-    width: 25%;
     margin-left: 50px;
 }
 
 .menu-bar ul {
     display: flex;
     list-style: none;
-    justify-content: space-between;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.menu-bar li {
+    margin-right: 25px;
+    font-size: 16px;
+}
+
+.user-signedin {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .post {
@@ -47,6 +57,8 @@ header h1 {
     color: blue;
     font-weight: bold;
 }
+
+
 
 .post-author {
     font-size: 16px;

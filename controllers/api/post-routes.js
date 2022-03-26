@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
             'title',
             'contents',
             'created_at',
-            'updated_at'
+            'updated_at',
+            'user_id'
         ],
         include: [{
             model: User,
