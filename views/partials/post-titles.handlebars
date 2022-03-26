@@ -1,7 +1,7 @@
 <li>
         <div class="post">
             <a href='/post/{{id}}'><p class="post-title">{{title}}</p></a>
-            <p class="post-date">Published by: <span class="post-user">{{user.user_name}}</span> - ({{timeSince created_at}})</p>
+            <p class="post-date">Published by: <span class="post-user">{{user.user_name}}</span> - on {{format_date created_at}} ({{timeSince created_at}})</p>
             <p class="post-comments">{{commentCount comments}}</p>
         </div>
-    </li>
+</li>

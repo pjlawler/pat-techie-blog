@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/withAuth');
 const { User, Post, Comment } = require('../../models');
 
 // GET /api/posts
@@ -70,11 +71,11 @@ router.get('/:id', (req, res) => {
     });
 });
 // POST /api/posts
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         contents: req.body.contents,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -83,8 +84,12 @@ router.post('/', (req, res) => {
     });
 });
 // PUT /api/posts/1
-router.put('/:id', (req, res) => {
-    Post.update(req.body, {
+router.put('/:id', withAuth, (req, res) => {
+    Post.update({
+        user_id: req.session.user_id,
+        title: req.body.title,
+        contents: req.body.contents
+    }, {
         where: { id: req.params.id }
     })
     .then(dbPostData => {

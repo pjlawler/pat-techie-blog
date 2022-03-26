@@ -1,5 +1,20 @@
+<h3 class="page-title">User Dashboard</h3>
+<br>
+<button id="add-btn" class="post-button">New Post</button>
+
 <ol class="post-list">
+
     {{#each posts as |post|}}
-    {{> post-titles }}
+    <li>
+        <div class="post">
+            <div class="dashboard-item">
+                <a href='/edit-post/{{id}}'><p class="post-title">{{title}}</p></a>
+                <p class="contents">{{contents}}</p>
+            </div>
+            <p class="post-date">Published: {{format_date created_at}} ({{timeSince created_at}})</p>
+            <p class="post-comments">{{commentCount comments}}</p>
+        </div>
+    </li>
     {{/each}}
 </ol>
+<script src="/javascript/dashboard.js"></script>

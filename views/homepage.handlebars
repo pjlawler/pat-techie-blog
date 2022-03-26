@@ -1,5 +1,12 @@
+<h3 class="page-title">The Latest Techie Blog Posts</h3>
+<br>
 <ol class="post-list">
     {{#each posts as |post|}}
-    {{> post-titles }}
+    <li>
+        <div class="post">
+            <a href='/post/{{id}}'><p class="post-title">{{title}}</p></a>
+            <p class="post-date">Published by: <span class="post-user">{{user.user_name}}</span> - {{format_date created_at}} ({{timeSince created_at}})</p>
+        </div>
+</li>
     {{/each}}
 </ol>

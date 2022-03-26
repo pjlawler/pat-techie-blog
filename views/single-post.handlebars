@@ -1,11 +1,11 @@
-
-    
+<h3 class="page-title">Post Details</h3>
+<br>
 
     <div class="single-post-wrapper">
 
         <p class="post-title">{{post.title}}</p>
         <div class="contents">{{post.contents}}</div>
-        <p class="post-date">Published by: <span class="bold">{{post.user.user_name}}</span> - ({{timeSince post.created_at}})</p>
+        <p class="post-date">Published by: <span class="bold">{{post.user.user_name}}</span> - on {{format_date post.created_at}} ({{timeSince post.created_at}})</p>
         <br>
 
         {{#if req.session.loggedIn}}
@@ -22,7 +22,10 @@
                 <img src="/assets/favicon-16x16.png" width="16px" height="16px">
                 <p class="comment-text">{{comment}}</p>
             </div>
-            <p class="post-date">- <span class="bold">{{user.user_name}}</span> ({{timeSince created_at}})</p>
+            <p class="post-date">- <span class="bold">{{user.user_name}}</span> - {{format_date created_at}} ({{timeSince created_at}})</p>
         {{/each}}
     </div>
+
+    {{#if req.session.loggedIn}}
     <script src="/javascript/add-comment.js"></script>
+    {{/if}}

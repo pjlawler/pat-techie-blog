@@ -1,12 +1,14 @@
 const commentButtonEl = document.querySelector('#comment-button');
 
+function init() {
+    document.querySelector('textarea').focus();
+}
 async function handleLeaveComment(event) {
     const comment = document.querySelector('textarea').value.trim();
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
-    const user_id = 1;
-
+   
     event.preventDefault();
     console.log('click')
 
@@ -14,8 +16,7 @@ async function handleLeaveComment(event) {
         method: 'post',
         body: JSON.stringify({
             comment,
-            post_id,
-            user_id
+            post_id
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -31,6 +32,6 @@ async function handleLeaveComment(event) {
 
 };
 
-
-
 commentButtonEl.addEventListener('click', handleLeaveComment);
+
+init();
