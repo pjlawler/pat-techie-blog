@@ -13,10 +13,11 @@ body {
     background: #00ABE1;
 }
 .wrapper {
-    width: 1100px;
+    max-width: 1100px;
     min-height: 100vh;
     margin: 0 auto;
     background: white;
+    padding-bottom: 20px;
 }
 
 /* Begin Header Formatting */
@@ -164,7 +165,7 @@ textarea {
 }
 .comment-text {
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 24px;
 }
 .comment-date {
     margin-left: 26px;
@@ -222,3 +223,11 @@ textarea {
     text-align: center;
 }
 
+@media screen and (max-width: 696px) {
+    .menu-bar li {
+        font-size: 18px;
+    }
+    .user-signedin {
+        display: none;
+    }
+  }
