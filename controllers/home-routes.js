@@ -48,7 +48,7 @@ router.get('/dashboard', withAuth, (req, res) => {
 })
 
 router.get('/new-post', withAuth, (req, res) => {
-  res.render('new-post');
+  res.render('new-post', { req });
 })
 
 router.get('/post/:id', (req, res) => {

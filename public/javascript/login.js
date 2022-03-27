@@ -5,6 +5,7 @@ const usernameEl = document.querySelector('#user-name');
 const userPasswordEl = document.querySelector('#user-password');
 const newUsernameEl = document.querySelector('#newuser-name');
 const newUserPasswordEl = document.querySelector('#newuser-password');
+const newUserEmailEl = document.querySelector('#newuser-email')
 const pageTitleEl = document.querySelector('.page-title');
 
 
@@ -19,6 +20,7 @@ function switchForms(event) {
         formNewUser.style.display = "flex";
         newUsernameEl.value = "";
         newUserPasswordEl.value = "";
+        newUserEmailEl.value = "";
         pageTitleEl.textContent = "New User Sign-up"
         newUsernameEl.focus();
     } else {
@@ -36,13 +38,15 @@ async function newuserLoginForm(event) {
     event.preventDefault();
     const user_name = newUsernameEl.value.trim();
     const password = newUserPasswordEl.value.trim();
+    const email = newUserEmailEl.value.trim();
 
-    if(user_name && password ) {
+    if(user_name && password && email ) {
         const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
                 user_name,
-                password
+                password,
+                email
             }),
             headers: {'Content-Type': 'application/json'}
         });
