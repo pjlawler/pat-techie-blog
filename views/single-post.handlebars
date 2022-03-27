@@ -1,31 +1,34 @@
 <h3 class="page-title">Post Details</h3>
-<br>
-
-    <div class="single-post-wrapper">
-
-        <p class="post-title">{{post.title}}</p>
-        <div class="contents">{{post.contents}}</div>
-        <p class="post-date">Published by: <span class="bold">{{post.user.user_name}}</span> - on {{format_date post.created_at}} ({{timeSince post.created_at}})</p>
-        <br>
+    
+    <section>
+        <div class="divider"></div>
+        <div class="feed-post">
+            <p class="post-date">Published by: <span class="bold">{{post.user.user_name}}</span> - on {{format_date post.created_at}} ({{timeSince post.created_at}}) | {{commentCount post.comments}}</p>
+            <p class="post-title">{{post.title}}</p>
+            <div class="contents">{{post.contents}}</div>
+        </div>
 
         {{#if req.session.loggedIn}}
          <form class="comment-form">
              <label for="new-comment">Leave a comment</label>
-             <textarea name="new-comment" id="new-comment" cols="100" rows="4"></textarea>
-             <button id="comment-button" class="button">Leave Comment</button>
+             <textarea name="new-comment" id="new-comment" cols="100" rows="2"></textarea>
+             <button id="comment-button" class="post-button">Leave Comment</button>
          </form>
          {{/if}}
 
-        <p class="comments-header">{{commentCount post.comments}}</p>
+        <p class="comments-header">Comments</p>
+        <div class="divider"></div>
         {{#each post.comments as |post-comment| }}
+        <div class="comments-wrapper">
+            <p class="post-date">- <span class="bold">{{user.user_name}}</span> - {{format_date created_at}} ({{timeSince created_at}})</p>
             <div class="comment-line">
                 <img src="/assets/favicon-16x16.png" width="16px" height="16px">
                 <p class="comment-text">{{comment}}</p>
             </div>
-            <p class="post-date">- <span class="bold">{{user.user_name}}</span> - {{format_date created_at}} ({{timeSince created_at}})</p>
+        </div>
+        <div class="divider"></div>
         {{/each}}
-    </div>
-
+    </section>
     {{#if req.session.loggedIn}}
     <script src="/javascript/add-comment.js"></script>
     {{/if}}

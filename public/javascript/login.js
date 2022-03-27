@@ -6,6 +6,7 @@ const userPasswordEl = document.querySelector('#user-password');
 const newUsernameEl = document.querySelector('#newuser-name');
 const newUserEmailEl = document.querySelector('#newuser-email');
 const newUserPasswordEl = document.querySelector('#newuser-password');
+const pageTitleEl = document.querySelector('.page-title');
 
 
 // Switches between form types
@@ -20,6 +21,7 @@ function switchForms(event) {
         newUsernameEl.value = "";
         newUserEmailEl.value = "";
         newUserPasswordEl.value = "";
+        pageTitleEl.textContent = "New User Sign-up"
         newUsernameEl.focus();
     } else {
         options.innerHTML = '<a href="">New User? - Click Here</a>';
@@ -27,6 +29,7 @@ function switchForms(event) {
         formNewUser.style.display = "none";
         userEmailEl.value = "";
         userPasswordEl.value = "";
+        pageTitleEl.textContent = "User Login"
         userEmailEl.focus();
     }
 

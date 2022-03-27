@@ -1,20 +1,27 @@
-<h3 class="page-title">User Dashboard</h3>
-<br>
-<button id="add-btn" class="post-button">New Post</button>
+<h3 class="page-title">My Dashboard</h3>
 
-<ol class="post-list">
 
+<section>
+    <div class="dashboard-stats">
+        <div>User: {{req.session.user_name}} has made {{postCount posts}}</div>
+        <button id="add-btn" class="post-button">New Post</button>
+    </div>
+    
+    <ul class="post-list">
+    <div class="divider"></div>
     {{#each posts as |post|}}
-    <li>
-        <div class="post">
-            <div class="dashboard-item">
-                <a href='/edit-post/{{id}}'><p class="post-title">{{title}}</p></a>
-                <p class="contents">{{contents}}</p>
-            </div>
-            <p class="post-date">Published: {{format_date created_at}} ({{timeSince created_at}})</p>
-            <p class="post-comments">{{commentCount comments}}</p>
+     <li>
+        <div class="dashboard-item">
+            <p class="post-date">Published: {{format_date created_at}} ({{timeSince created_at}}) | {{commentCount comments}}</p>
+            <a href='/edit-post/{{id}}'><p class="post-title">&gt; {{title}}</p></a>
+            <p class="contents">{{contents}}</p>
         </div>
+        <div class="divider"></div>
     </li>
     {{/each}}
-</ol>
+</ul>
+
+
+</section>
+
 <script src="/javascript/dashboard.js"></script>

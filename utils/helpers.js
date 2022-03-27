@@ -57,6 +57,17 @@ function commentCount(comments) {
     }
 };
 
+function postCount(posts) {
+    switch(true) {
+        case posts.length === 0:
+            return 'no posts yet.';
+        case posts.length === 1:
+            return '1 post.'
+        default:
+            return `${posts.length} posts.`
+    }
+}
+
 function format_date(date) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
@@ -64,4 +75,4 @@ function format_date(date) {
     return `${month}/${day}`
 }
 
-module.exports = {timeSince, commentCount, format_date }
+module.exports = {timeSince, commentCount, format_date, postCount }

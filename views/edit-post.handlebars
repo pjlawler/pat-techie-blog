@@ -1,13 +1,15 @@
 <h3 class="page-title">Editing Post Id #{{post.id}}</h3>
-<br>
-<div class="edit-wrapper">
-    <label for="edit-title">Title of Post</label>
-    <textarea name="edit-title" id="edit-title" cols="300" rows="2">{{post.title}}</textarea>
-    <label for="edit-contents">Post Contents</label>
-    <textarea name="edit-contents" id="edit-contents" cols="300" rows="20">{{post.contents}}</textarea>
-    <div class="button-wrapper">
-        <button id="update-btn" class="post-button">Update</button>
-        <button id="delete-btn" class="post-button">Delete</button>
+<section>
+    <div class="divider"></div>
+    <div class="edit-form">
+        <label for="edit-title">Title of Post</label>
+        <textarea name="edit-title" id="edit-title" cols="300" rows="2">{{post.title}}</textarea>
+        <label for="edit-contents">Post Contents</label>
+        <textarea name="edit-contents" id="edit-contents" cols="300" rows="15">{{post.contents}}</textarea>
+        <div class="button-wrapper">
+            <button id="update-btn" class="post-button">Update</button>
+            <button id="delete-btn" class="post-button">Delete</button>
+        </div>
     </div>
-</div>
+</section>
 <script src="/javascript/edit-posts.js"></script>
