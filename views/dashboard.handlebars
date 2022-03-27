@@ -1,8 +1,11 @@
 <h3 class="page-title">My Dashboard</h3>
 
 <section>
-    <div class="dashboard-stats">
-        <div>User: {{req.session.user_name}} has made {{postCount posts}}</div>
+    <div class="dashboard-stats">     
+        <div>
+            <p>You have made {{postCount posts}} so far.</p>
+            <p>Click on any of your post titles below to edit or delete the post.</p>
+        </div>
         <button id="add-btn" class="post-button">New Post</button>
     </div>
     
@@ -11,7 +14,7 @@
     {{#each posts as |post|}}
      <li>
         <div class="dashboard-item">
-            <p class="post-date">Published: {{format_date created_at}} ({{timeSince created_at}}) | {{commentCount comments}}</p>
+            <p class="post-byline">{{format_date created_at}} ({{timeSince created_at}}) | {{commentCount comments}}</p>
             <a href='/edit-post/{{id}}'><p class="post-title">&gt; {{title}}</p></a>
             <p class="contents">{{contents}}</p>
         </div>

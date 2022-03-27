@@ -98,6 +98,12 @@ section {
     padding-top: 10px;
     padding-bottom: 10px
 }
+.post-byline {
+    font-size: 20px;
+}
+.post-user {
+    font-weight: bold;
+}
 
 /* Homepage Formatting */
 .feed-post {

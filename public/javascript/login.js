@@ -1,10 +1,9 @@
 const options = document.querySelector('.other-options');
 const formUser = document.querySelector('#formUser');
 const formNewUser = document.querySelector('#formNewUser');
-const userEmailEl = document.querySelector('#user-email');
+const usernameEl = document.querySelector('#user-name');
 const userPasswordEl = document.querySelector('#user-password');
 const newUsernameEl = document.querySelector('#newuser-name');
-const newUserEmailEl = document.querySelector('#newuser-email');
 const newUserPasswordEl = document.querySelector('#newuser-password');
 const pageTitleEl = document.querySelector('.page-title');
 
@@ -19,7 +18,6 @@ function switchForms(event) {
         formUser.style.display = "none";
         formNewUser.style.display = "flex";
         newUsernameEl.value = "";
-        newUserEmailEl.value = "";
         newUserPasswordEl.value = "";
         pageTitleEl.textContent = "New User Sign-up"
         newUsernameEl.focus();
@@ -27,7 +25,7 @@ function switchForms(event) {
         options.innerHTML = '<a href="">New User? - Click Here</a>';
         formUser.style.display = "flex";
         formNewUser.style.display = "none";
-        userEmailEl.value = "";
+        usernameEl.valu = "";
         userPasswordEl.value = "";
         pageTitleEl.textContent = "User Login"
         userEmailEl.focus();
@@ -37,7 +35,6 @@ function switchForms(event) {
 async function newuserLoginForm(event) {
     event.preventDefault();
     const user_name = newUsernameEl.value.trim();
-    const email = newUserEmailEl.value.trim();
     const password = newUserPasswordEl.value.trim();
 
     if(user_name && email && password ) {
@@ -45,7 +42,6 @@ async function newuserLoginForm(event) {
             method: 'post',
             body: JSON.stringify({
                 user_name,
-                email,
                 password
             }),
             headers: {'Content-Type': 'application/json'}
@@ -61,14 +57,14 @@ async function newuserLoginForm(event) {
 }
 async function userLoginForm(event) {
     event.preventDefault();
-    const email = userEmailEl.value.trim();
+    const user_name = usernameEl.value.trim();
     const password = userPasswordEl.value.trim();
 
-    if(email && password) {
+    if(user_name && password) {
         const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
-                email,
+                user_name,
                 password
             }),
             headers: {'Content-Type':'application/json'}

@@ -3,7 +3,7 @@
     <section>
         <div class="divider"></div>
         <div class="feed-post">
-            <p class="post-date">Published by: <span class="bold">{{post.user.user_name}}</span> - on {{format_date post.created_at}} ({{timeSince post.created_at}}) | {{commentCount post.comments}}</p>
+            <p class="post-byline"><span class="post-user">{{post.user.user_name}}</span> | {{format_date post.created_at}} ({{timeSince post.created_at}}) | {{commentCount post.comments}}</p>
             <p class="post-title">{{post.title}}</p>
             <div class="contents">{{post.contents}}</div>
         </div>
@@ -20,7 +20,7 @@
         <div class="divider"></div>
         {{#each post.comments as |post-comment| }}
         <div class="comments-wrapper">
-            <p class="post-date">- <span class="bold">{{user.user_name}}</span> - {{format_date created_at}} ({{timeSince created_at}})</p>
+            <p class="post-byline"><span class="post-user">{{user.user_name}}</span> | {{format_date created_at}} ({{timeSince created_at}})</p>
             <div class="comment-line">
                 <img src="/assets/favicon-16x16.png" width="16px" height="16px">
                 <p class="comment-text">{{comment}}</p>
