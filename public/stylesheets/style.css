@@ -50,6 +50,7 @@ section {
 .post-button:hover {
     background: var(--primary-color);
     color: white;
+    font-weight: bold;
 }
 .post-title {
     font-size: 24px;
@@ -140,6 +141,10 @@ header h1 {
     padding: 10px;
     margin-bottom: 20px;
 }
+.dashboard-stats p {
+    margin-right: 20px;
+    flex: 1 0;
+}
 .dashboard-item {
     display: flex;
     flex-direction: column;
@@ -166,7 +171,7 @@ header h1 {
 }
 textarea {
     width: 100%;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
     padding: 10px;
 }
@@ -183,10 +188,14 @@ textarea {
     background: whitesmoke;
     padding-top: 10px;
     padding-bottom: 10px;
+    align-items: center;
+}
+.comment-line img {
+    margin-left: 10px;
 }
 .comment-text {
     margin-left: 10px;
-    font-size: 24px;
+    font-size: 22px;
 }
 .comment-date {
     margin-left: 26px;

@@ -37,7 +37,7 @@ async function newuserLoginForm(event) {
     const user_name = newUsernameEl.value.trim();
     const password = newUserPasswordEl.value.trim();
 
-    if(user_name && email && password ) {
+    if(user_name && password ) {
         const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({

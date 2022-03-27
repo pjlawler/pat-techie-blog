@@ -4,14 +4,13 @@ function init() {
     document.querySelector('textarea').focus();
 }
 async function handleLeaveComment(event) {
+    event.preventDefault();
+
     const comment = document.querySelector('textarea').value.trim();
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
-   
-    event.preventDefault();
-    console.log('click')
-
+    if(!comment) { return };
     const response = await fetch('/api/comments', {
         method: 'post',
         body: JSON.stringify({
