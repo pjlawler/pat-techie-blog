@@ -60,11 +60,11 @@ function commentCount(comments) {
 function postCount(posts) {
     switch(true) {
         case posts.length === 0:
-            return 'no posts yet.';
+            return 'no posts';
         case posts.length === 1:
-            return '1 post.'
+            return '1 post'
         default:
-            return `${posts.length} posts.`
+            return `${posts.length} posts`
     }
 }
 

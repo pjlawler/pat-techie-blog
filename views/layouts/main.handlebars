@@ -22,13 +22,13 @@
       <br>
       <nav class="menu-bar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/"><button class="post-button">Home</button></a></li>
+          <li><a href="/dashboard"><button class="post-button">Dashboard</button></a></li>
           {{#if req.session.loggedIn}}
-          <li><a href="#" id="logout">Logout</a></li>
-          <li class="user-signedin">Logged in as: {{req.session.user_name}}</li>
+          <li><a href="#" id="logout"><button class="post-button">Logout</button></a></li>
+          <li class="user-signedin">Logged in as: <span class="loggedin-user">{{req.session.user_name}}</span></li>
           {{else}}
-          <li><a href="/login" id="login">Login</a></li>
+          <li><a href="/login" id="login"><button class="post-button">Login</button></a></li>
           <li class="user-signedin">Logged in as: </li>
           {{/if}}
         </ul>

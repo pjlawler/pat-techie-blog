@@ -1,16 +1,21 @@
 <h3 class="page-title">My Dashboard</h3>
 
 <section>
-    <div class="dashboard-stats">     
-        <div>
-            <p>You have made {{postCount posts}} so far.</p>
-            <p>Click on any of your post titles below to edit or delete the post.</p>
-        </div>
-        <button id="add-btn" class="post-button">New Post</button>
+    <div class="headline-wrapper">
+        <div class="dashboard-stats">     
+            <p>You have made {{postCount posts}} so far{{#if posts}}, click on the post's title to edit or delete that post{{/if}}. Click the "New Post" button to publish a new post.</p>
+            <button id="add-btn" class="post-button">New Post</button>
+        </div>  
     </div>
-    
+   
+
+
+    {{#if posts}}
     <ul class="post-list">
+    <h4 class="page-subtitle">Your Past Posts</h4>
     <div class="divider"></div>
+    {{/if}}
+
     {{#each posts as |post|}}
      <li>
         <div class="dashboard-item">

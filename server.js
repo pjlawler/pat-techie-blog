@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: process.env.SESSION_SECRET,
-  cookie: {},
+  cookie: { maxAge: 900000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({ db: sequelize })
@@ -32,4 +32,3 @@ sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
   });
 
-  // Create single page (14.3.3)
