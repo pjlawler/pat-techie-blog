@@ -29,6 +29,7 @@
   SESSION_SECRET=  <!-- can be any phrase you wish to use -->
 ```
   - Run source db/schema.sql from the mysql2 shell to create the database 'tech_blog_db'
+  - For security purposes, the app is currently set to end the session after 15-minutes.
 
 
   - - -

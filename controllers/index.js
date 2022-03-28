@@ -7,7 +7,7 @@ router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 
 router.use((req, res)=> {
-    res.status(469).end();
+    res.render('error-page', {message:'Incorrect route encountered!'});
 });
 
 module.exports = router;
